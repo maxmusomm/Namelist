@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Add User</h1>
+        <form action="/" method="post">
+            <input type="text" name="username" placeholder="Name" required>
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+    <h1>search</h1>
+    <form action="/" method="get">
+        <input type="text" name="search" placeholder="Search" required>
+        <button type="submit">Search</button>
+    </form>
+    <div class="links" style="display: flex; gap: 10px; flex-direction: column;">
+        <a href="/delete">Delete All</a>
+    </div>
+
+    <ul>
+        <% search ? searchUsernames.forEach(username => { %>
+            <li><%= username.username %></li>
+        <% }) : usernames.forEach(username => { %>
+            <li><%= username.username %></li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>
